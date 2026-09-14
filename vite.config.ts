@@ -5,6 +5,8 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
+    // Project site: https://trifmarius1.github.io/geminiCV/
+    base: process.env.GITHUB_PAGES === 'true' ? '/geminiCV/' : '/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
