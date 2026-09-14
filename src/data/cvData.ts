@@ -406,7 +406,9 @@ export const translations = {
       education: "Education",
       contact: "Contact",
       connectLinkedIn: "Connect on LinkedIn",
-      printCV: "Export / Print CV"
+      printCV: "Export / Print CV",
+      aiShowcase: "This website was built as a showcase of how to use AI to create a professional profile site from scratch.",
+      aiShowcaseShort: "AI showcase: a professional profile website built from scratch."
     },
     hero: {
       verified: "LinkedIn Verified Profile",
@@ -440,7 +442,9 @@ export const translations = {
       education: "Educație",
       contact: "Contact",
       connectLinkedIn: "Conectează-te pe LinkedIn",
-      printCV: "Exportă / Printează CV"
+      printCV: "Exportă / Printează CV",
+      aiShowcase: "Acest website a fost construit ca demonstrație a modului în care poți folosi AI pentru a crea de la zero un site profesional de profil.",
+      aiShowcaseShort: "Demonstrație AI: un website de profil profesional, construit de la zero."
     },
     hero: {
       verified: "Profil LinkedIn Verificat",
@@ -474,7 +478,9 @@ export const translations = {
       education: "Formazione",
       contact: "Contatto",
       connectLinkedIn: "Collegati su LinkedIn",
-      printCV: "Esporta / Stampa CV"
+      printCV: "Esporta / Stampa CV",
+      aiShowcase: "Questo sito è una vetrina su come usare l'IA per creare da zero un sito web professionale di profilo.",
+      aiShowcaseShort: "Vetrina IA: un sito di profilo professionale costruito da zero."
     },
     hero: {
       verified: "Profilo LinkedIn Verificato",

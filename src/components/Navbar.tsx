@@ -56,6 +56,20 @@ export const Navbar: React.FC<NavbarProps> = ({
           : 'bg-transparent border-b border-neutral-900/40'
       }`}
     >
+      {/* AI showcase strip */}
+      <div
+        id="ai-showcase-banner"
+        className="bg-fuchsia-950/90 border-b border-fuchsia-700/40 text-[11px] sm:text-xs py-1.5 px-4 text-fuchsia-100"
+      >
+        <div className="max-w-7xl mx-auto flex items-center justify-center gap-2 text-center">
+          <Sparkles className="w-3.5 h-3.5 text-fuchsia-300 shrink-0" />
+          <p>
+            <span className="hidden sm:inline">{t.aiShowcase}</span>
+            <span className="sm:hidden">{t.aiShowcaseShort}</span>
+          </p>
+        </div>
+      </div>
+
       {/* Top micro-banner for LinkedIn & Availability Status */}
       <div className="bg-gradient-to-r from-fuchsia-950 via-purple-950 to-neutral-950 border-b border-fuchsia-800/30 text-xs py-1 px-4 text-neutral-300">
         <div className="max-w-7xl mx-auto flex items-center justify-between">

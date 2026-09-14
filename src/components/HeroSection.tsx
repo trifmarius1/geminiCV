@@ -68,7 +68,7 @@ END:VCARD`;
   return (
     <section 
       id="hero"
-      className="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden"
+      className="relative pt-36 pb-16 md:pt-44 md:pb-24 overflow-hidden"
     >
       {/* Dynamic Magenta Ambient Glows */}
       <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[600px] sm:w-[900px] h-[400px] bg-gradient-to-br from-fuchsia-600/15 via-pink-600/10 to-purple-800/15 rounded-full blur-3xl pointer-events-none -z-10" />
