@@ -32,7 +32,8 @@ export const Footer: React.FC = () => {
               href={contactData.linkedInUrl} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-fuchsia-300 hover:text-white transition-colors"
+              aria-label="Open LinkedIn profile in a new tab"
+              className="inline-flex items-center gap-1.5 text-fuchsia-300 hover:text-white transition-colors cursor-pointer"
             >
               <Linkedin className="w-4 h-4 text-[#0a66c2]" />
               <span>LinkedIn Profile</span>

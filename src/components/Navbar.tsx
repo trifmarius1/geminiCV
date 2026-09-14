@@ -75,7 +75,9 @@ export const Navbar: React.FC<NavbarProps> = ({
               target="_blank" 
               rel="noopener noreferrer" 
               id="top-bar-linkedin-link"
-              className="flex items-center gap-1.5 text-fuchsia-300 hover:text-fuchsia-100 transition-colors font-medium"
+              aria-label="Open LinkedIn profile in a new tab"
+              title="Open LinkedIn profile in a new tab"
+              className="inline-flex items-center gap-1.5 text-fuchsia-300 hover:text-fuchsia-100 transition-colors font-medium cursor-pointer whitespace-nowrap"
             >
               <Linkedin className="w-3.5 h-3.5 text-[#0a66c2]" />
               <span className="hidden md:inline">LinkedIn Profile</span>
@@ -136,14 +138,14 @@ export const Navbar: React.FC<NavbarProps> = ({
             </div>
           </a>
 
-          {/* Desktop Nav Links */}
-          <nav className="hidden lg:flex items-center gap-1">
+          {/* Desktop Nav Links — 2xl so CTAs are never crushed */}
+          <nav className="hidden 2xl:flex items-center gap-1">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 id={`desktop-nav-${link.name.toLowerCase().replace(/\s+/g, '-')}`}
-                className={`px-3 py-2 rounded-lg text-sm font-medium transition-all ${
+                className={`px-3 py-2 rounded-lg text-sm font-medium transition-all whitespace-nowrap ${
                   link.highlight
                     ? 'text-fuchsia-300 hover:text-white bg-fuchsia-950/40 hover:bg-fuchsia-900/60 border border-fuchsia-800/40'
                     : 'text-neutral-300 hover:text-white hover:bg-neutral-900/60'
@@ -157,13 +159,14 @@ export const Navbar: React.FC<NavbarProps> = ({
             ))}
           </nav>
 
-          {/* Action CTAs */}
-          <div className="hidden sm:flex items-center gap-2.5">
+          {/* Desktop CTAs — do not shrink or wrap */}
+          <div className="hidden 2xl:flex items-center gap-2.5 shrink-0">
             <button
               onClick={onPrintClick}
               id="navbar-print-btn"
+              type="button"
               title="Print or Save as PDF"
-              className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-semibold text-neutral-300 hover:text-white bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 transition-all cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-semibold text-neutral-300 hover:text-white bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 transition-all cursor-pointer whitespace-nowrap"
             >
               <Printer className="w-3.5 h-3.5 text-fuchsia-400" />
               <span>{t.printCV}</span>
@@ -174,20 +177,37 @@ export const Navbar: React.FC<NavbarProps> = ({
               target="_blank"
               rel="noopener noreferrer"
               id="navbar-linkedin-btn"
-              className="flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-xs font-bold text-white bg-gradient-to-r from-fuchsia-600 via-pink-600 to-fuchsia-700 hover:from-fuchsia-500 hover:to-pink-500 shadow-md shadow-fuchsia-600/30 hover:shadow-fuchsia-500/50 transition-all transform hover:-translate-y-0.5"
+              aria-label="Connect on LinkedIn (opens in a new tab)"
+              title="Open LinkedIn profile in a new tab"
+              className="relative z-10 inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-xs font-bold text-white bg-gradient-to-r from-fuchsia-600 via-pink-600 to-fuchsia-700 hover:from-fuchsia-500 hover:to-pink-500 shadow-md shadow-fuchsia-600/30 hover:shadow-fuchsia-500/50 transition-colors cursor-pointer whitespace-nowrap"
             >
-              <Linkedin className="w-3.5 h-3.5" />
+              <Linkedin className="w-3.5 h-3.5 shrink-0" />
               <span>{t.connectLinkedIn}</span>
             </a>
           </div>
 
-          {/* Mobile / Foldable Menu Toggle */}
-          <div className="flex items-center gap-2 lg:hidden">
+          {/* Tablet / mobile actions */}
+          <div className="flex items-center gap-2 2xl:hidden shrink-0">
+            <a
+              href={contactData.linkedInUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              id="navbar-linkedin-compact-btn"
+              aria-label="Connect on LinkedIn (opens in a new tab)"
+              title="Open LinkedIn profile in a new tab"
+              className="relative z-10 inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-bold text-white bg-gradient-to-r from-fuchsia-600 via-pink-600 to-fuchsia-700 hover:from-fuchsia-500 hover:to-pink-500 shadow-md shadow-fuchsia-600/30 cursor-pointer whitespace-nowrap"
+            >
+              <Linkedin className="w-3.5 h-3.5 shrink-0" />
+              <span className="hidden sm:inline">{t.connectLinkedIn}</span>
+              <span className="sm:hidden">LinkedIn</span>
+            </a>
+
             <button
               onClick={onPrintClick}
               id="mobile-print-btn"
+              type="button"
               aria-label="Print CV"
-              className="p-2 rounded-lg text-neutral-300 hover:text-white bg-neutral-900 border border-neutral-800"
+              className="p-2 rounded-lg text-neutral-300 hover:text-white bg-neutral-900 border border-neutral-800 cursor-pointer"
             >
               <Printer className="w-4 h-4 text-fuchsia-400" />
             </button>
@@ -195,8 +215,9 @@ export const Navbar: React.FC<NavbarProps> = ({
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               id="mobile-menu-toggle-btn"
+              type="button"
               aria-label="Toggle navigation menu"
-              className="p-2 rounded-lg text-neutral-300 hover:text-white bg-neutral-900/90 border border-fuchsia-900/50 focus:outline-none focus:ring-2 focus:ring-fuchsia-500"
+              className="p-2 rounded-lg text-neutral-300 hover:text-white bg-neutral-900/90 border border-fuchsia-900/50 focus:outline-none focus:ring-2 focus:ring-fuchsia-500 cursor-pointer"
             >
               {isMobileMenuOpen ? <X className="w-6 h-6 text-fuchsia-400" /> : <Menu className="w-6 h-6 text-neutral-200" />}
             </button>
@@ -208,7 +229,7 @@ export const Navbar: React.FC<NavbarProps> = ({
       {isMobileMenuOpen && (
         <div 
           id="mobile-nav-drawer"
-          className="lg:hidden bg-neutral-950/98 backdrop-blur-2xl border-b border-fuchsia-900/50 px-4 pt-3 pb-6 space-y-2 shadow-2xl animate-in slide-in-from-top duration-200"
+          className="2xl:hidden bg-neutral-950/98 backdrop-blur-2xl border-b border-fuchsia-900/50 px-4 pt-3 pb-6 space-y-2 shadow-2xl animate-in slide-in-from-top duration-200"
         >
           <div className="grid grid-cols-1 gap-1">
             {navLinks.map((link) => (
@@ -237,7 +258,8 @@ export const Navbar: React.FC<NavbarProps> = ({
               target="_blank"
               rel="noopener noreferrer"
               id="mobile-drawer-linkedin-cta"
-              className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-fuchsia-600 to-pink-600 shadow-lg shadow-fuchsia-600/30"
+              aria-label="Connect on LinkedIn (opens in a new tab)"
+              className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-fuchsia-600 to-pink-600 shadow-lg shadow-fuchsia-600/30 cursor-pointer"
             >
               <Linkedin className="w-4 h-4" />
               <span>{t.connectLinkedIn}</span>

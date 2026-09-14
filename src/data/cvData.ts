@@ -7,7 +7,7 @@ export const contactData: ContactInfo = {
   phone: "+40745221158",
   email: "trif_marius1@yahoo.com",
   secondaryEmail: "trifmarius1@gmail.com",
-  linkedInUrl: "https://www.linkedin.com/in/marius-trif-239aa8104",
+  linkedInUrl: "https://www.linkedin.com/in/marius-trif-239aa8104/",
   linkedInHandle: "marius-trif-239aa8104",
   location: "Cluj-Napoca, Romania",
   remoteStatus: "Open to Remote, Hybrid & Relocation",

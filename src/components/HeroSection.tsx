@@ -160,7 +160,9 @@ END:VCARD`;
                 target="_blank"
                 rel="noopener noreferrer"
                 id="hero-linkedin-cta"
-                className="flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-fuchsia-600 via-pink-600 to-fuchsia-700 hover:from-fuchsia-500 hover:to-pink-500 shadow-xl shadow-fuchsia-600/35 hover:shadow-fuchsia-500/50 transition-all transform hover:-translate-y-0.5"
+                aria-label="Connect on LinkedIn (opens in a new tab)"
+                title="Open LinkedIn profile in a new tab"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-fuchsia-600 via-pink-600 to-fuchsia-700 hover:from-fuchsia-500 hover:to-pink-500 shadow-xl shadow-fuchsia-600/35 hover:shadow-fuchsia-500/50 transition-colors cursor-pointer whitespace-nowrap"
               >
                 <Linkedin className="w-4 h-4 text-white" />
                 <span>{t.primaryCta}</span>
@@ -305,7 +307,9 @@ END:VCARD`;
                   target="_blank"
                   rel="noopener noreferrer"
                   id="hero-card-linkedin-link"
-                  className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-xs font-bold text-white bg-neutral-900 hover:bg-neutral-800 border border-fuchsia-900/60 hover:border-fuchsia-600 transition-colors"
+                  aria-label="View full LinkedIn profile (opens in a new tab)"
+                  title="Open LinkedIn profile in a new tab"
+                  className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-xs font-bold text-white bg-neutral-900 hover:bg-neutral-800 border border-fuchsia-900/60 hover:border-fuchsia-600 transition-colors cursor-pointer"
                 >
                   <Linkedin className="w-3.5 h-3.5 text-[#0a66c2]" />
                   <span>View Full Profile on LinkedIn</span>

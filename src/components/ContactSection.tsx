@@ -98,7 +98,9 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang, onP
                 target="_blank"
                 rel="noopener noreferrer"
                 id="contact-section-linkedin-btn"
-                className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-fuchsia-600 to-pink-600 hover:from-fuchsia-500 hover:to-pink-500 shadow-md shadow-fuchsia-600/30 transition-all"
+                aria-label="Open LinkedIn profile in a new tab"
+                title="Open LinkedIn profile in a new tab"
+                className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-fuchsia-600 to-pink-600 hover:from-fuchsia-500 hover:to-pink-500 shadow-md shadow-fuchsia-600/30 transition-colors cursor-pointer"
               >
                 <Linkedin className="w-4 h-4" />
                 <span>linkedin.com/in/marius-trif-239aa8104</span>
