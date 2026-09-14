@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --primary-magenta: #d946ef;
+    --primary-magenta-dark: #a21caf;
+    --primary-magenta-light: #f472b6;
+    --accent-magenta: #e11d48;
+    --bg-dark: #0a0510;
+    --card-dark: #14091f;
+    --border-dark: #2a123d;
+  }
+
+  html {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    color-scheme: dark;
+  }
+}
+
+/* Custom Scrollbar with Magenta Accents */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #09030f;
+}
+::-webkit-scrollbar-thumb {
+  background: #4a154b;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a21caf;
+}
+
+/* Foldables and Ultra-Compact Screens Support */
+@media (max-width: 320px) {
+  .compact-stack {
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+  }
+}
+
+/* Print Optimization for Recruiter PDF / Print Export */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .print-break-inside-avoid {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .print-card {
+    border: 1px solid #e2e8f0 !important;
+    background: #ffffff !important;
+    color: #0f172a !important;
+    box-shadow: none !important;
+  }
+}
